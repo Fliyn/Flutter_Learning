@@ -16,12 +16,51 @@ void main() {
           centerTitle: true,
           backgroundColor: Colors.red[900],
         ),
-        body: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            Text("wazzaaap1"),
-            Container(color: Colors.amber,padding: EdgeInsets.all(12),child: Text("Container"),),
-            TextButton(onPressed: (){},child: Text("Clickable"),),
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children:<Widget>[
+                Expanded(flex:5,child: Column(children: <Widget>[Text("wazzaaap1"),])),
+                Expanded(flex:5,child: Column(children: <Widget>[Text("wazzaaap2"),])),
+                Expanded(flex:5,child: Column(children: <Widget>[Text("wazzaaap3"),])),
+            ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children:<Widget>[
+                Expanded(child: Column(children: <Widget>[Container(color: Colors.amber,padding: EdgeInsets.all(12),child: Text("Container"),),])),
+                Expanded(child: Column(children: <Widget>[Container(color: Colors.amber,padding: EdgeInsets.all(12),child: Text("Container2"),),])),
+                Expanded(child: Column(children: <Widget>[Container(color: Colors.amber,padding: EdgeInsets.all(12),child: Text("Container3"),),])),
+            ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children:<Widget>[
+              Expanded(
+                child: Column(
+                  children: [
+                    TextButton(onPressed: (){},child: Text("Clickable"),),
+                  ],
+                ),
+              ),
+                Expanded(
+                child: Column(
+                  children: [
+                    TextButton(onPressed: (){},child: Text("Clickable2"),),
+                  ],
+                ),
+              ),
+                Expanded(
+                child: Column(
+                  children: [
+                    TextButton(onPressed: (){},child: Text("Clickable3"),),
+                  ],
+                ),
+              ),
+            ],
+            ),
           ],
         ),
         floatingActionButton: FloatingActionButton(
